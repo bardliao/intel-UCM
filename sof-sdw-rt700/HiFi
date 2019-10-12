@@ -38,11 +38,11 @@ SectionDevice."Microphone" {
 	}
 }
 
-SectionDevice."Dmic" {
-	Comment "Digital Micrphone"
-
-	Value {
-		CapturePCM "hw:sofsdwrt700,2"
-		CaptureChannels "2"
-	}
-}
+#SectionDevice."Dmic" {
+#	Comment "Digital Micrphone"
+#
+#	Value {
+#		CapturePCM "hw:sofsdwrt700,2"
+#		CaptureChannels "2"
+#	}
+#}
