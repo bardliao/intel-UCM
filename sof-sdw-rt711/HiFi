@@ -1,0 +1,38 @@
+# Use case Configuration for skl-hda-card
+
+SectionVerb {
+
+	EnableSequence [
+		cdev "hw:sofsdwrt711"
+		cset "name='PGA1.0 1 Master Playback Volume' 80"
+		cset "name='DAC Surr Playback Volume' 87"
+		cset "name='ADC 23 Mux' 'MIC2'"
+		cset "name='ADC 08 Capture Volume' 63"
+		cset "name='ADC 08 Capture Switch' 1"
+		cset "name='AMIC Volume' 1"
+		
+	]
+
+	DisableSequence [
+		cdev "hw:sofsdwrt711"
+	]
+}
+
+SectionDevice."Headphone" {
+	Comment "Headphone"
+
+	Value {
+		PlaybackPCM "hw:sofsdwrt711,0"
+		PlaybackChannels "2"
+	}
+}
+
+SectionDevice."Microphone" {
+	Comment "Headset Mic"
+
+	Value {
+		CapturePCM "hw:sofsdwrt711,1"
+		CaptureChannels "2"
+	}
+}
+
