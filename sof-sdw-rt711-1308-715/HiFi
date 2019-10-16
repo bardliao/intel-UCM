@@ -99,3 +99,84 @@ SectionDevice."Dmic" {
 		CaptureChannels "2"
 	}
 }
+
+SectionDevice."HDMI1" {
+        Comment "HDMI1/DP1 Output"
+
+        ConflictingDevice [
+                # "Headset"
+        ]
+
+        EnableSequence [
+		cdev "hw:sofsdwrt7111308"
+                cset "name='hif4-0 Jack Switch' on"
+                cset "name='Pin4-Port0 Mux' 1"
+        ]
+
+        DisableSequence [
+                cdev "hw:sofsdwrt7111308"
+                cset "name='Pin4-Port0 Mux' 0"
+                cset "name='hif4-0 Jack Switch' off"
+        ]
+
+        Value {
+                PlaybackPCM "hw:sofsdwrt7111308,5"
+                PlaybackChannels "2"
+                JackControl "HDMI/DP, pcm=5 Jack"
+                # JackHWMute "Headset"
+        }
+}
+
+SectionDevice."HDMI2" {
+        Comment "HDMI2/DP2 Output"
+
+        ConflictingDevice [
+                # "Headset"
+        ]
+
+        EnableSequence [
+                cdev "hw:sofsdwrt7111308"
+                cset "name='hif6-0 Jack Switch' on"
+                cset "name='Pin6-Port0 Mux' 2"
+        ]
+
+        DisableSequence [
+                cdev "hw:sofsdwrt7111308"
+                cset "name='Pin6-Port0 Mux' 0"
+                cset "name='hif6-0 Jack Switch' off"
+        ]
+
+        Value {
+                PlaybackPCM "hw:sofsdwrt7111308,6"
+                PlaybackChannels "2"
+                JackControl "HDMI/DP, pcm=6 Jack"
+                # JackHWMute "Headset"
+        }
+}
+
+SectionDevice."HDMI3" {
+        Comment "HDMI3/DP3 Output"
+
+        ConflictingDevice [
+                # "Headset"
+        ]
+
+        EnableSequence [
+                cdev "hw:sofsdwrt7111308"
+                cset "name='hif8-0 Jack Switch' on"
+                cset "name='Pin8-Port0 Mux' 3"
+        ]
+
+        DisableSequence [
+                cdev "hw:sofsdwrt7111308"
+                cset "name='Pin8-Port0 Mux' 0"
+                cset "name='hif8-0 Jack Switch' off"
+        ]
+
+	Value {
+                PlaybackPCM "hw:sofsdwrt7111308,7"
+                PlaybackChannels "2"
+                JackControl "HDMI/DP, pcm=7 Jack"
+                # JackHWMute "Headset"
+        }
+}
