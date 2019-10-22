@@ -5,17 +5,6 @@ SectionVerb {
 	EnableSequence [
 		cdev "hw:sofsdwrt7111308"
 		cset "name='PGA1.0 1 Master Playback Volume' 80"
-		cset "name='rt711 DAC Surr Playback Volume' 87"
-                cset "name='rt1308-1 DAC L Switch' 1"
-                cset "name='rt1308-1 DAC R Switch' 1"
-		cset "name='rt711 ADC 23 Mux' 'MIC2'"
-		cset "name='rt711 ADC 08 Capture Volume' 63"
-		cset "name='rt711 ADC 08 Capture Switch' 1"
-		cset "name='rt711 AMIC Volume' 1"
-		cset "name='rt715 ADC 24 Mux' 2"
-		cset "name='rt715 ADC 25 Mux' 3"
-		cset "name='rt715 ADC 27 Capture Switch' 1"
-		cset "name='rt715 ADC 07 Capture Switch' 1"
 		
 	]
 
@@ -30,6 +19,12 @@ SectionDevice."Speaker" {
 #	ConflictingDevice [
 #		"Headphone"
 #	]
+
+	EnableSequence [
+		cdev "hw:sofsdwrt7111308"
+                cset "name='rt1308-1 DAC L Switch' 1"
+                cset "name='rt1308-1 DAC R Switch' 1"
+	]
 
         Value {
 		PlaybackPCM "hw:sofsdwrt7111308,2"
@@ -46,6 +41,10 @@ SectionDevice."Headphone" {
 #		"Speaker"
 #	]
 	
+	EnableSequence [
+		cdev "hw:sofsdwrt7111308"
+		cset "name='rt711 DAC Surr Playback Volume' 87"
+	]
 	Value {
 		PlaybackPCM "hw:sofsdwrt7111308,0"
 		PlaybackChannels "2"
@@ -58,6 +57,13 @@ SectionDevice."Headphone" {
 SectionDevice."Microphone" {
 	Comment "Headset Mic"
 
+	EnableSequence [
+		cdev "hw:sofsdwrt7111308"
+		cset "name='rt711 ADC 23 Mux' 'MIC2'"
+		cset "name='rt711 ADC 08 Capture Volume' 63"
+		cset "name='rt711 ADC 08 Capture Switch' 1"
+		cset "name='rt711 AMIC Volume' 1"
+	]
 	Value {
 		CapturePCM "hw:sofsdwrt7111308,1"
 		CaptureChannels "2"
@@ -68,6 +74,14 @@ SectionDevice."Microphone" {
 
 SectionDevice."Dmic" {
 	Comment "Digital Micrphone"
+
+	EnableSequence [
+		cdev "hw:sofsdwrt7111308"
+		cset "name='rt715 ADC 24 Mux' 2"
+		cset "name='rt715 ADC 25 Mux' 3"
+		cset "name='rt715 ADC 27 Capture Switch' 1"
+		cset "name='rt715 ADC 07 Capture Switch' 1"
+	]
 
 	Value {
 		CapturePCM "hw:sofsdwrt7111308,4"
