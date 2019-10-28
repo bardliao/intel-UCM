@@ -100,14 +100,14 @@ SectionDevice."HDMI1" {
 
         EnableSequence [
 		cdev "hw:sofsdwrt7111308"
-                cset "name='hif4-0 Jack Switch' on"
-                cset "name='Pin4-Port0 Mux' 1"
+                cset "name='hif5-0 Jack Switch' on"
+                cset "name='Pin5-Port0 Mux' 1"
         ]
 
         DisableSequence [
                 cdev "hw:sofsdwrt7111308"
-                cset "name='Pin4-Port0 Mux' 0"
-                cset "name='hif4-0 Jack Switch' off"
+                cset "name='Pin5-Port0 Mux' 0"
+                cset "name='hif5-0 Jack Switch' off"
         ]
 
         Value {
@@ -154,14 +154,14 @@ SectionDevice."HDMI3" {
 
         EnableSequence [
                 cdev "hw:sofsdwrt7111308"
-                cset "name='hif8-0 Jack Switch' on"
-                cset "name='Pin8-Port0 Mux' 3"
+                cset "name='hif7-0 Jack Switch' on"
+                cset "name='Pin7-Port0 Mux' 3"
         ]
 
         DisableSequence [
                 cdev "hw:sofsdwrt7111308"
-                cset "name='Pin8-Port0 Mux' 0"
-                cset "name='hif8-0 Jack Switch' off"
+                cset "name='Pin7-Port0 Mux' 0"
+                cset "name='hif7-0 Jack Switch' off"
         ]
 
 	Value {
