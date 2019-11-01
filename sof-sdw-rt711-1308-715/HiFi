@@ -5,20 +5,12 @@ SectionVerb {
 	EnableSequence [
 		cdev "hw:sofsdwrt7111308"
 		cset "name='PGA1.0 1 Master Playback Volume' 80"
-		
 	]
 
-	DisableSequence [
-		cdev "hw:sofsdwrt7111308"
-	]
 }
 
 SectionDevice."Speaker" {
         Comment "Speaker"
-
-#	ConflictingDevice [
-#		"Headphone"
-#	]
 
 	EnableSequence [
 		cdev "hw:sofsdwrt7111308"
@@ -29,7 +21,6 @@ SectionDevice."Speaker" {
         Value {
 		PlaybackPCM "hw:sofsdwrt7111308,2"
 		PlaybackChannels "2"
-#		JackHWMute "Headphone"
         }
 }
 
@@ -37,10 +28,6 @@ SectionDevice."Speaker" {
 SectionDevice."Headphone" {
 	Comment "Headphone"
 
-#	ConflictingDevice [
-#		"Speaker"
-#	]
-	
 	EnableSequence [
 		cdev "hw:sofsdwrt7111308"
 		cset "name='rt711 DAC Surr Playback Volume' 87"
@@ -48,8 +35,6 @@ SectionDevice."Headphone" {
 	Value {
 		PlaybackPCM "hw:sofsdwrt7111308,0"
 		PlaybackChannels "2"
-#		JackHWMute "Speaker-1"
-#		JackDev "sof-sdw-rt711-1308-715 Headset Jack"
 		JackControl "Headphone Jack"
 	}
 }
@@ -67,7 +52,6 @@ SectionDevice."Microphone" {
 	Value {
 		CapturePCM "hw:sofsdwrt7111308,1"
 		CaptureChannels "2"
-#		JackDev "sof-sdw-rt711-1308-715 Headset Jack"
 		JackControl "Headset Mic Jack"
 	}
 }
@@ -94,10 +78,6 @@ SectionDevice."Dmic" {
 SectionDevice."HDMI1" {
         Comment "HDMI1/DP1 Output"
 
-        ConflictingDevice [
-                # "Headset"
-        ]
-
         EnableSequence [
 		cdev "hw:sofsdwrt7111308"
                 cset "name='hif5-0 Jack Switch' on"
@@ -114,16 +94,11 @@ SectionDevice."HDMI1" {
                 PlaybackPCM "hw:sofsdwrt7111308,5"
                 PlaybackChannels "2"
                 JackControl "HDMI/DP, pcm=5 Jack"
-                # JackHWMute "Headset"
         }
 }
 
 SectionDevice."HDMI2" {
         Comment "HDMI2/DP2 Output"
-
-        ConflictingDevice [
-                # "Headset"
-        ]
 
         EnableSequence [
                 cdev "hw:sofsdwrt7111308"
@@ -141,16 +116,11 @@ SectionDevice."HDMI2" {
                 PlaybackPCM "hw:sofsdwrt7111308,6"
                 PlaybackChannels "2"
                 JackControl "HDMI/DP, pcm=6 Jack"
-                # JackHWMute "Headset"
         }
 }
 
 SectionDevice."HDMI3" {
         Comment "HDMI3/DP3 Output"
-
-        ConflictingDevice [
-                # "Headset"
-        ]
 
         EnableSequence [
                 cdev "hw:sofsdwrt7111308"
@@ -168,6 +138,5 @@ SectionDevice."HDMI3" {
                 PlaybackPCM "hw:sofsdwrt7111308,7"
                 PlaybackChannels "2"
                 JackControl "HDMI/DP, pcm=7 Jack"
-                # JackHWMute "Headset"
         }
 }
